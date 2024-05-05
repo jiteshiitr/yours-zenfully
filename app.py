@@ -71,5 +71,9 @@ assets_dir = base_dir + '/assets'
 def serve_css(filename):
     return send_from_directory(assets_dir, filename)
 
+@app.route('/sitemap.xml')
+def serve_xml():
+    return send_from_directory(base_dir, 'sitemap.xml')
+
 if __name__ == '__main__':
     app.run(debug=True)
