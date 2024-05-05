@@ -1,0 +1,28 @@
+<!-- templates/consult.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="text-center fade-in">
+        <h1>Consult a Therapist</h1>
+        <p class="lead">Looking for a therapist? Fill out the form below to get started.</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('consult') }}" class="mx-auto fade-in" style="max-width: 600px;">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.name.label }}<br>
+            {{ form.name(class_="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.phone.label }}<br>
+            {{ form.phone(class_="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.therapy_type.label }}<br>
+            {{ form.therapy_type(class_="form-select") }}
+        </div>
+        <div class="mb-3">
+            {{ form.submit(class_="btn btn-primary") }}
+        </div>
+    </form>
+{% endblock %}
