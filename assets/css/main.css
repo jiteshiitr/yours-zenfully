@@ -2045,6 +2045,13 @@
   .blog .blog-pagination li:hover a {
     color: var(--color-white);
   }
+
+  .equal-size {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Adjust the height as needed */
+    object-fit: cover;
+  }
   
   /*--------------------------------------------------------------
   # Blog Posts List

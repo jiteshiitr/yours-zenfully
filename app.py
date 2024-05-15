@@ -10,11 +10,11 @@ app.config['SECRET_KEY'] = 'supersecretkey'
 def index():
     return render_template('index.html')
 
-@app.route('/blogs')
+@app.route('/blog')
 def blog():
     return render_template('blog.html')
 
-@app.route('/blog-details/<path:blog_id>')
+@app.route('/blog-details-<path:blog_id>')
 def blogdetails(blog_id):
     template_address = 'blog-details-' + blog_id + '.html'
     return render_template(template_address)
