@@ -71,6 +71,19 @@
   }
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var iframe = document.getElementById('typeform-full');
+      iframe.onload = function () {
+        gtag('event', 'typeform_loaded', {
+          'event_category': 'engagement',
+          'event_label': 'Typeform Consultation',
+          'value': 1
+        });
+      };
+    });
+  </script>
+
   <!-- Favicons -->
   <link href="/assets/img/favicon.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
