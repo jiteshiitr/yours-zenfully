@@ -2315,160 +2315,234 @@
   /*--------------------------------------------------------------
   # Blog Sidebar
   --------------------------------------------------------------*/
-  .blog .sidebar {
-    padding: 30px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+  /* Base styles for sidebar post items */
+.sidebar .post-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sidebar .post-item img {
+  width: 80px;
+  height: 80px;
+  margin-right: 5px; /* Further reduced space between image and text */
+  object-fit: cover;
+}
+
+.sidebar .post-item .post-content {
+  flex: 1;
+}
+
+.sidebar .post-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.sidebar .post-item time {
+  font-size: 14px;
+  color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar .post-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .blog .sidebar .sidebar-title {
-    font-size: 20px;
-    font-weight: 700;
-    padding: 0;
-    margin: 0;
-    color: var(--color-default);
+
+  .sidebar .post-item img {
+    width: 100%;
+    height: auto;
+    margin-right: 0; /* Remove right margin on smaller screens */
+    margin-bottom: 10px; /* Add space below the image */
   }
-  
-  .blog .sidebar .sidebar-item+.sidebar-item {
-    margin-top: 40px;
-  }
-  
-  .blog .sidebar .search-form form {
-    background: #fff;
-    border: 1px solid rgba(34, 34, 34, 0.3);
-    padding: 5px 10px;
-    position: relative;
-    border-radius: 50px;
-  }
-  
-  .blog .sidebar .search-form form input[type=text] {
-    border: 0;
-    padding: 4px;
-    border-radius: 50px;
-    width: calc(100% - 60px);
-  }
-  
-  .blog .sidebar .search-form form input[type=text]:focus {
-    outline: none;
-  }
-  
-  .blog .sidebar .search-form form button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    border: 0;
-    background: none;
-    font-size: 16px;
-    padding: 0 25px;
-    margin: -1px;
-    background: var(--color-primary);
-    color: #fff;
-    transition: 0.3s;
-    border-radius: 50px;
-    line-height: 0;
-  }
-  
-  .blog .sidebar .search-form form button i {
-    line-height: 0;
-  }
-  
-  .blog .sidebar .search-form form button:hover {
-    background: rgba(0, 131, 116, 0.8);
-  }
-  
-  .blog .sidebar .categories ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .blog .sidebar .categories ul li+li {
-    padding-top: 10px;
-  }
-  
-  .blog .sidebar .categories ul a {
-    color: var(--color-default);
-    transition: 0.3s;
-  }
-  
-  .blog .sidebar .categories ul a:hover {
-    color: var(--color-primary);
-  }
-  
-  .blog .sidebar .categories ul a span {
-    padding-left: 5px;
-    color: rgba(34, 34, 34, 0.4);
+
+  .sidebar .post-item h4 {
     font-size: 14px;
   }
-  
-  .blog .sidebar .recent-posts .post-item+.post-item {
-    margin-top: 15px;
+
+  .sidebar .post-item time {
+    font-size: 12px;
   }
-  
-  .blog .sidebar .recent-posts img {
-    width: 80px;
-    float: left;
+}
+
+@media (max-width: 480px) {
+  .sidebar .post-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .blog .sidebar .recent-posts h4 {
-    font-size: 15px;
-    margin-left: 95px;
-    font-weight: bold;
+
+  .sidebar .post-item img {
+    width: 100%;
+    height: auto;
+    margin-right: 0; /* Remove right margin on smaller screens */
+    margin-bottom: 10px; /* Add space below the image */
   }
-  
-  .blog .sidebar .recent-posts h4 a {
-    color: var(--color-default);
-    transition: 0.3s;
+
+  .sidebar .post-item h4 {
+    font-size: 12px;
   }
-  
-  .blog .sidebar .recent-posts h4 a:hover {
-    color: var(--color-primary);
+
+  .sidebar .post-item time {
+    font-size: 10px;
   }
-  
-  .blog .sidebar .recent-posts time {
-    display: block;
-    margin-left: 95px;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(34, 34, 34, 0.4);
-  }
-  
-  .blog .sidebar .tags {
-    margin-bottom: -10px;
-  }
-  
-  .blog .sidebar .tags ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .blog .sidebar .tags ul li {
-    display: inline-block;
-  }
-  
-  .blog .sidebar .tags ul a {
-    color: #555555;
-    font-size: 14px;
-    padding: 6px 20px;
-    margin: 0 6px 8px 0;
-    border: 1px solid #d5d5d5;
-    display: inline-block;
-    transition: 0.3s;
-    border-radius: 50px;
-  }
-  
-  .blog .sidebar .tags ul a:hover {
-    color: #fff;
-    border: 1px solid var(--color-primary);
-    background: var(--color-primary);
-  }
-  
-  .blog .sidebar .tags ul a span {
-    padding-left: 5px;
-    color: rgba(85, 85, 85, 0.8);
-    font-size: 14px;
-  }
-  
+}
+
+/* Blog sidebar styles */
+.blog .sidebar {
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.blog .sidebar .sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  color: var(--color-default);
+}
+
+.blog .sidebar .sidebar-item+.sidebar-item {
+  margin-top: 40px;
+}
+
+.blog .sidebar .search-form form {
+  background: #fff;
+  border: 1px solid rgba(34, 34, 34, 0.3);
+  padding: 5px 10px;
+  position: relative;
+  border-radius: 50px;
+}
+
+.blog .sidebar .search-form form input[type=text] {
+  border: 0;
+  padding: 4px;
+  border-radius: 50px;
+  width: calc(100% - 60px);
+}
+
+.blog .sidebar .search-form form input[type=text]:focus {
+  outline: none;
+}
+
+.blog .sidebar .search-form form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 25px;
+  margin: -1px;
+  background: var(--color-primary);
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+  line-height: 0;
+}
+
+.blog .sidebar .search-form form button i {
+  line-height: 0;
+}
+
+.blog .sidebar .search-form form button:hover {
+  background: rgba(0, 131, 116, 0.8);
+}
+
+.blog .sidebar .categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .sidebar .categories ul li+li {
+  padding-top: 10px;
+}
+
+.blog .sidebar .categories ul a {
+  color: var(--color-default);
+  transition: 0.3s;
+}
+
+.blog .sidebar .categories ul a:hover {
+  color: var(--color-primary);
+}
+
+.blog .sidebar .categories ul a span {
+  padding-left: 5px;
+  color: rgba(34, 34, 34, 0.4);
+  font-size: 14px;
+}
+
+.blog .sidebar .recent-posts .post-item+.post-item {
+  margin-top: 5px;
+}
+
+.blog .sidebar .recent-posts img {
+  width: 80px;
+  float: left;
+}
+
+.blog .sidebar .recent-posts h4 {
+  font-size: 15px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.blog .sidebar .recent-posts h4 a {
+  color: var(--color-default);
+  transition: 0.3s;
+}
+
+.blog .sidebar .recent-posts h4 a:hover {
+  color: var(--color-primary);
+}
+
+.blog .sidebar .recent-posts time {
+  display: block;
+  margin-left: 20px;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(34, 34, 34, 0.4);
+}
+
+.blog .sidebar .tags {
+  margin-bottom: -10px;
+}
+
+.blog .sidebar .tags ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .sidebar .tags ul li {
+  display: inline-block;
+}
+
+.blog .sidebar .tags ul a {
+  color: #555555;
+  font-size: 14px;
+  padding: 6px 20px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #d5d5d5;
+  display: inline-block;
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+.blog .sidebar .tags ul a:hover {
+  color: #fff;
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+}
+
+.blog .sidebar .tags ul a span {
+  padding-left: 5px;
+  color: rgba(85, 85, 85, 0.8);
+  font-size: 14px;
+}
+
   /*--------------------------------------------------------------
   # Blog Comments
   --------------------------------------------------------------*/
