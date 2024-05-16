@@ -1654,6 +1654,24 @@
   /*--------------------------------------------------------------
   # Recent Blog Posts Section
   --------------------------------------------------------------*/
+  .btn-view-all {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #58a4b0, #0c7463);
+      border-radius: 50px;
+      border: 2px solid #ffffff;
+      text-align: center;
+      transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-view-all:hover {
+      background: linear-gradient(135deg, #0c7463, #58a4b0);
+      color: #ffffff;
+  }
+  
   .recent-posts article {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     background-color: #fff;

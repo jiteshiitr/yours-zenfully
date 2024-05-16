@@ -16,7 +16,7 @@ def blog():
 
 @app.route('/blog-details-<path:blog_id>')
 def blogdetails(blog_id):
-    template_address = 'blog-details-' + blog_id + '.html'
+    template_address = 'blogs/blog-details-' + blog_id + '.html'
     return render_template(template_address)
 
 base_dir=os.getcwd()
