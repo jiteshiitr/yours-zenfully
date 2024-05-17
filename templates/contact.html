@@ -6,6 +6,21 @@
 
 {% block main_content %}
 
+
+<script>
+    /**
+    * The following event is sent when the page loads. You could
+    * wrap the event in a JavaScript function so the event is
+    * sent when the user performs some action.
+    */
+    gtag('event', 'contact_view', {
+      'app_name': 'YoursZenfully',
+      'screen_name': 'contact'
+    });
+</script> 
+
+
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container rounded shadow-sm p-4 mx-auto" data-aos="fade-up">
