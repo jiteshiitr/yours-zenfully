@@ -14,6 +14,10 @@ def index():
 def blog():
     return render_template('blog.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/blog-details-<path:blog_id>')
 def blogdetails(blog_id):
     template_address = 'blogs/blog-details-' + blog_id + '.html'
