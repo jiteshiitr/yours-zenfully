@@ -28,6 +28,10 @@
             'event': 'typeformSubmit',
             'formId': event.data.formId
           });
+          gtag('event', 'form_submit', {
+            'app_name': 'YoursZenfully',
+            'screen_name': 'contact'
+            });
         }
       }
     }, false);
