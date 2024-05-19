@@ -1,14 +1,17 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 from flask_wtf import FlaskForm
+from dotenv import load_dotenv
 
 import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
+load_dotenv()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    bearer_token = os.getenv('BEARER_TOKEN')
+    return render_template('index.html', bearer_token=bearer_token)
 
 @app.route('/blog')
 def blog():
@@ -16,7 +19,8 @@ def blog():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    bearer_token = os.getenv('BEARER_TOKEN')
+    return render_template('contact.html', bearer_token=bearer_token)
 
 @app.route('/blog-details-<path:blog_id>')
 def blogdetails(blog_id):
