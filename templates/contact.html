@@ -6,7 +6,6 @@
 
 {% block main_content %}
 
-
 <script>
     /**
     * The following event is sent when the page loads. You could
@@ -18,7 +17,6 @@
       'screen_name': 'contact'
     });
 </script> 
-
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
@@ -79,19 +77,14 @@
               </div>
               <button type="submit">Submit</button>
           </form>
-      </div>
-
-
         </div>
       </div>
     </div>
     <div class="text-center mt-4">
         <a href="/#hero" class="btn-view-all">Explore Yours Zenfully</a>
     </div>
-  </section>
-
+</section>
 <!-- End Contact Section -->
-
 
 <script>
   document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -108,13 +101,10 @@
           }
       };
 
-      console.log(`Bearer {{ bearer_token }}`);
-
-      fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+      fetch('https://omj33xy5jl.execute-api.ap-southeast-1.amazonaws.com/dev/contact', {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer {{ bearer_token }}`
+              'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
       })
@@ -134,10 +124,8 @@
       });
   });
 </script>
-  
-  {% endblock %}
-  
-  {% block extra_js %}
-  
 
+{% endblock %}
+
+{% block extra_js %}
 {% endblock %}
