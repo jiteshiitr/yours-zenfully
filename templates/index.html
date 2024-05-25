@@ -675,58 +675,6 @@
   </main><!-- End #main -->
 
 
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-  
-      // Google Analytics event tracking
-      gtag('event', 'contact_shared', {
-          'event_category': 'Contact Form',
-          'event_label': 'Form Submitted',
-          'value': 1
-      });
-
-        // Collect form data
-        const formData = new FormData(this);
-        const data = {
-            properties: {
-                email: '',
-                firstname: formData.get('name'),
-                lastname: '',
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            }
-        };
-  
-        console.log('Form Data:', data);
-  
-        // Make the POST request
-        fetch('https://omj33xy5jl.execute-api.ap-southeast-1.amazonaws.com/dev/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            console.log('Response:', response);
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(result => {
-            console.log('Result:', result);
-            alert('Form submitted successfully!');
-            document.getElementById('contact-form').reset();
-        })
-        .catch(error => {
-            alert('There was an error submitting the form. Please try again.');
-            console.error('Error:', error);
-        });
-    });
-  </script>
-
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"/> 

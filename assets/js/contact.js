@@ -83,6 +83,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
+    const stepDescriptions = [
+        'Step 1: Name',
+        'Step 2: Contact',
+        'Step 3: Message'
+        // Add more descriptions if there are more steps
+    ];
+
+    // Add event listener to all buttons within the form
+    const allButtons = contactForm.querySelectorAll('button');
+    allButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const currentDescription = stepDescriptions[currentStep] || 'Unknown Step';
+            // Google Analytics event tracking for button clicks
+            gtag('event', 'click', {
+                'event_category': 'Contact Form',
+                'event_label': button.textContent.trim() + ' Button',
+                'event_stage': currentDescription,
+                'value': currentStep + 1
+            });
+        });
+    });
+
     nextStepButtons.forEach(button => {
         button.addEventListener('click', () => {
             const currentFormStep = formSteps[currentStep];
@@ -113,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
         const formData = new FormData(this);
@@ -147,6 +169,14 @@ document.addEventListener('DOMContentLoaded', function() {
             formSteps.forEach(step => step.classList.remove('active'));
             formSteps[currentStep].classList.add('active');
             updateProgressBar();
+
+            // Google Analytics event tracking for form submission
+            gtag('event', 'form_submission', {
+                'event_category': 'Contact Form',
+                'event_label': 'Consult a Therapist Form',
+                'event_stage': 'Submission',
+                'value': 1
+            });
         })
         .catch(error => {
             showSubmissionPopup('There was an error submitting the form. Please try again.');
