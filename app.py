@@ -19,7 +19,7 @@ import os
 
 
 # Your Gemini API key
-GEMINI_API_KEY = 'AIzaSyBLBpVFKICv2dRu2oDUQmr-jCva0JFaVhE'
+
 FEW_SHOT_EXAMPLES = """
 User: You are Zen, an expert mental health therapist. I want you to be my therapist and start maintaining my information. Help me get to the root of my problems and help me get out of them. Please only focus on my mental health and if I ask you to talk about anything else, bring me back to focusing on my mental health. Act as an active listener and provide me with the best mental health therapy service. Please make sure that for atleast the next 10000 conversations, you remember who I am and what I have told you. Don't reply with more than 60 words at a time.
 Chatbot: Sure. I will be your therapist and help you with your mental health. Please tell me more about what you are going through. How would you like to start this session today?
@@ -83,8 +83,9 @@ def generate_response(message):
         ]
     }
 
-    print(full_prompt)
-    response = requests.post(f'{url}?key={GEMINI_API_KEY}', headers=headers, json=data)
+    
+    gemini_key=os.getenv('GEMINI_API_KEY')
+    response = requests.post(f'{url}?key={gemini_key}', headers=headers, json=data)
     response.raise_for_status()
 
     response_data = response.json()

@@ -90,10 +90,11 @@
   document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Collect form data
       const formData = new FormData(this);
       const data = {
           properties: {
-              email: '',
+              email: 'jjj.aaa0517@example.com',
               firstname: formData.get('name'),
               lastname: '',
               phone: formData.get('phone'),
@@ -101,6 +102,9 @@
           }
       };
 
+      console.log('Form Data:', data);
+
+      // Make the POST request
       fetch('https://omj33xy5jl.execute-api.ap-southeast-1.amazonaws.com/dev/contact', {
           method: 'POST',
           headers: {
@@ -109,12 +113,14 @@
           body: JSON.stringify(data)
       })
       .then(response => {
+          console.log('Response:', response);
           if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);
           }
           return response.json();
       })
       .then(result => {
+          console.log('Result:', result);
           alert('Form submitted successfully!');
           document.getElementById('contact-form').reset();
       })
@@ -124,6 +130,7 @@
       });
   });
 </script>
+
 
 {% endblock %}
 
