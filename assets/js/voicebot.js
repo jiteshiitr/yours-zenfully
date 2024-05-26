@@ -17,7 +17,7 @@ $(document).ready(function() {
             .then(function(stream) {
                 mediaRecorder = new MediaRecorder(stream);
                 mediaRecorder.start();
-                $('#record-button').addClass('recording').text('Stop');
+                $('#record-button').addClass('recording').html('<i class="fas fa-stop"></i> Stop');
                 $('.progress-container').addClass('active');
 
                 mediaRecorder.ondataavailable = function(e) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
     function stopRecording() {
         mediaRecorder.stop();
-        $('#record-button').removeClass('recording').text('Record');
+        $('#record-button').removeClass('recording').html('<i class="fas fa-microphone"></i> Speak');
         $('.progress-container').removeClass('active');
         isRecording = false;
     }
