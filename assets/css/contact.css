@@ -240,3 +240,21 @@ display: block;
 #contact-form {
     position: relative;
 }
+
+
+
+/* Calendar CSS components */
+
+.slot {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.slot.selected {
+    background-color: #ff7e5f;
+    color: #fff;
+    border-color: #ff7e5f;
+}

@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const stepDescriptions = [
-        'Step 1: Name',
-        'Step 2: Contact',
-        'Step 3: Message'
+        'btn_name_step',
+        'btn_contact_step',
+        'btn_submit_step'
         // Add more descriptions if there are more steps
     ];
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             const currentDescription = stepDescriptions[currentStep] || 'Unknown Step';
             // Google Analytics event tracking for button clicks
-            gtag('event', 'click', {
+            gtag('event', currentDescription, {
                 'event_category': 'Contact Form',
                 'event_label': button.textContent.trim() + ' Button',
                 'event_stage': currentDescription,
