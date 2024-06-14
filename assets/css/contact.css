@@ -258,3 +258,22 @@ display: block;
     color: #fff;
     border-color: #ff7e5f;
 }
+
+
+/* Loader CSS files */
+.loader {
+    display: none;
+}
+
+.btn:disabled .btn-text {
+    display: none;
+}
+
+.btn:disabled .loader {
+    display: inline-block;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+

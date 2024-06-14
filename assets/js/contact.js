@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentStep = 0;
 
     const phoneInput = window.intlTelInput(phoneInputField, {
-      initialCountry: "in",
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        initialCountry: "in",
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
     });
 
     phoneInputField.addEventListener('countrychange', function() {
-      countryCodeDropdown.value = phoneInput.getSelectedCountryData().dialCode;
+        countryCodeDropdown.value = phoneInput.getSelectedCountryData().dialCode;
     });
 
     function updateProgressBar() {
@@ -87,15 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         'btn_name_step',
         'btn_contact_step',
         'btn_submit_step'
-        // Add more descriptions if there are more steps
     ];
 
-    // Add event listener to all buttons within the form
     const allButtons = contactForm.querySelectorAll('button');
     allButtons.forEach(button => {
         button.addEventListener('click', function(event) {
             const currentDescription = stepDescriptions[currentStep] || 'Unknown Step';
-            // Google Analytics event tracking for button clicks
             gtag('event', currentDescription, {
                 'event_category': 'Contact Form',
                 'event_label': button.textContent.trim() + ' Button',
@@ -138,6 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
+        const submitButton = event.submitter;
+        submitButton.disabled = true;
+        submitButton.querySelector('.btn-text').style.display = 'none';
+        submitButton.querySelector('.loader').style.display = 'inline-block';
+
         const formData = new FormData(this);
         const data = {
             properties: {
@@ -170,16 +172,22 @@ document.addEventListener('DOMContentLoaded', function() {
             formSteps[currentStep].classList.add('active');
             updateProgressBar();
 
-            // Google Analytics event tracking for form submission
             gtag('event', 'form_submission', {
                 'event_category': 'Contact Form',
                 'event_label': 'Consult a Therapist Form',
                 'event_stage': 'Submission',
                 'value': 1
             });
+
+            submitButton.disabled = false;
+            submitButton.querySelector('.btn-text').style.display = 'inline-block';
+            submitButton.querySelector('.loader').style.display = 'none';
         })
         .catch(error => {
             showSubmissionPopup('There was an error submitting the form. Please try again.');
+            submitButton.disabled = false;
+            submitButton.querySelector('.btn-text').style.display = 'inline-block';
+            submitButton.querySelector('.loader').style.display = 'none';
         });
     });
 

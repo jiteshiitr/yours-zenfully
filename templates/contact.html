@@ -15,101 +15,102 @@
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
-    <div class="container rounded shadow-sm p-4 mx-auto" data-aos="fade-up">
+  <div class="container rounded shadow-sm p-4 mx-auto" data-aos="fade-up">
       <div class="section-header text-center" style="margin-bottom:-10px">
-        <h2>Consult a Therapist</h2>
-        <p>Send your query here and we will match you with the best possible therapist</p>
+          <h2>Consult a Therapist</h2>
+          <p>Send your query here and we will match you with the best possible therapist</p>
       </div>
 
       <div class="row gx-lg-0 gy-4">
-        <div class="col-lg-8" id="contact-form-div">
-          <div class="contact-form" style="animation: slideInRight 1s ease-in-out;">
-            <h2>Let's Talk</h2>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <form id="contact-form">
-                <div class="form-step active">
-                    <div class="form-group">
-                        <label for="name">Name*</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                        <small class="helper-text">Please enter your full name.</small>
-                        <small class="error-message"></small>
-                    </div>
-                    <div class="form-navigation">
-                        <button type="button" class="btn btn-primary next-step">Next</button>
-                    </div>
-                </div>
-                <div class="form-step">
-                    <div class="form-group">
-                        <label for="phone">Phone*</label>
-                        <div class="d-flex">
-                            <select  type="tel" id="country-code" name="country-code" class="form-control w-auto" style="width: 500px; padding-left:30px; padding-right:30px"></select>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="8123456789" style="margin-left:5%; width:100%" required>
-                        </div>
-                        <small class="helper-text">Please enter a valid phone number (e.g., 8126782445).</small>
-                        <small class="error-message"></small>
-                    </div>
-                    <div class="form-navigation">
-                        <button type="button" class="btn btn-secondary prev-step">Back</button>
-                        <button type="button" class="btn btn-primary next-step">Next</button>
-                    </div>
-                </div>
-                <div class="form-step">
-                    <div class="form-group">
-                        <label for="message">Please describe briefly what would you like to discuss with our therapist?</label>
-                        <textarea id="message" name="message" rows="5" class="form-control"></textarea>
-                        <small class="helper-text">Provide a brief description of your query.</small>
-                        <small class="error-message"></small>
-                    </div>
-                    <div class="form-navigation">
-                        <button type="button" class="btn btn-secondary prev-step">Back</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </form>
+          <div class="col-lg-8" id="contact-form-div">
+              <div class="contact-form" style="animation: slideInRight 1s ease-in-out;">
+                  <h2>Let's Talk</h2>
+                  <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <form id="contact-form">
+                      <div class="form-step active">
+                          <div class="form-group">
+                              <label for="name">Name*</label>
+                              <input type="text" id="name" name="name" class="form-control" required>
+                              <small class="helper-text">Please enter your full name.</small>
+                              <small class="error-message"></small>
+                          </div>
+                          <div class="form-navigation">
+                              <button type="button" class="btn btn-primary next-step">Next</button>
+                          </div>
+                      </div>
+                      <div class="form-step">
+                          <div class="form-group">
+                              <label for="phone">Phone*</label>
+                              <div class="d-flex">
+                                  <select type="tel" id="country-code" name="country-code" class="form-control w-auto" style="width: 500px; padding-left:30px; padding-right:30px"></select>
+                                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="8123456789" style="margin-left:5%; width:100%" required>
+                              </div>
+                              <small class="helper-text">Please enter a valid phone number (e.g., 8126782445).</small>
+                              <small class="error-message"></small>
+                          </div>
+                          <div class="form-navigation">
+                              <button type="button" class="btn btn-secondary prev-step">Back</button>
+                              <button type="button" class="btn btn-primary next-step">Next</button>
+                          </div>
+                      </div>
+                      <div class="form-step">
+                          <div class="form-group">
+                              <label for="message">Please describe briefly what would you like to discuss with our therapist?</label>
+                              <textarea id="message" name="message" rows="5" class="form-control"></textarea>
+                              <small class="helper-text">Provide a brief description of your query.</small>
+                              <small class="error-message"></small>
+                          </div>
+                          <div class="form-navigation">
+                              <button type="button" class="btn btn-secondary prev-step">Back</button>
+                              <button type="submit" class="btn btn-primary">
+                                  <span class="btn-text">Submit</span>
+                                  <span class="loader" style="display: none;">Loading...</span>
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
           </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="info-container d-flex flex-column align-items-center justify-content-center rounded shadow-sm p-4" style="animation: slideInLeft 1s ease-in-out;">
-            <div class="info-item d-flex">
-              <i class="bi bi-geo-alt flex-shrink-0" style="color: #ff7e5f;"></i>
-              <div>
-                <h4>Location:</h4>
-                <p>RMZ Ecospace, Bangalore</p>
-              </div>
-            </div>
-            <div class="info-item d-flex">
-              <i class="bi bi-envelope flex-shrink-0" style="color: #ff7e5f;"></i>
-              <div>
-                <h4>Email:</h4>
-                <p>sherpa@yourszenfully.com</p>
-              </div>
-            </div>
-            <div class="info-item d-flex">
-              <i class="bi bi-phone flex-shrink-0" style="color: #ff7e5f;"></i>
-              <div>
-                <h4>Call:</h4>
-                <p>+91 81267 82445</p>
-              </div>
-            </div>
-            <div class="info-item d-flex">
-              <i class="bi bi-clock flex-shrink-0" style="color: #ff7e5f;"></i>
-              <div>
-                <h4>Open Hours:</h4>
-                <p>Mon-Sat: 11 AM - 8 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        
+          <div class="col-lg-4">
+              <div class="info-container d-flex flex-column align-items-center justify-content-center rounded shadow-sm p-4" style="animation: slideInLeft 1s ease-in-out;">
+                  <div class="info-item d-flex">
+                      <i class="bi bi-geo-alt flex-shrink-0" style="color: #ff7e5f;"></i>
+                      <div>
+                          <h4>Location:</h4>
+                          <p>RMZ Ecospace, Bangalore</p>
+                      </div>
+                  </div>
+                  <div class="info-item d-flex">
+                      <i class="bi bi-envelope flex-shrink-0" style="color: #ff7e5f;"></i>
+                      <div>
+                          <h4>Email:</h4>
+                          <p>sherpa@yourszenfully.com</p>
+                      </div>
+                  </div>
+                  <div class="info-item d-flex">
+                      <i class="bi bi-phone flex-shrink-0" style="color: #ff7e5f;"></i>
+                      <div>
+                          <h4>Call:</h4>
+                          <p>+91 81267 82445</p>
+                      </div>
+                  </div>
+                  <div class="info-item d-flex">
+                      <i class="bi bi-clock flex-shrink-0" style="color: #ff7e5f;"></i>
+                      <div>
+                          <h4>Open Hours:</h4>
+                          <p>Mon-Sat: 11 AM - 8 PM</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-
+  </div>
 </section>
 <!-- End Contact Section -->
+
 
 
   <!-- ======= Hero Section ======= -->
